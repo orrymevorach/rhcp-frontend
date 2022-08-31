@@ -1,0 +1,14 @@
+@import '@vars';
+
+@media screen and (max-width: $mobile) {
+  .teamDetailsColumn {
+    width: 60px;
+  }
+  .teamDetailsColumnMedium {
+    width: 60px;
+  }
+
+  .teamDetailsColumnMediumLarge {
+    width: 100px;
+  }
+}

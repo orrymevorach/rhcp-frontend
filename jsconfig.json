@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@vars": ["styles/vars.module.scss"],
+      "@colors": ["styles/colors.module.scss"],
+      "@fonts": ["styles/fonts.module.scss"],
+      "@global": ["styles/global.module.scss"],
+      "@hooks": ["hooks/index.js"],
+      "@utils/*": ["utils/"],
+      "@mixins": ["styles/mixins.module.scss"],
+      "@images/*": ["images/"],
+      "@json/*": ["json/*"]
+    }
+  }
+}

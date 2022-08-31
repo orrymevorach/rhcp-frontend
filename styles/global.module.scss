@@ -1,0 +1,35 @@
+@import './fonts.module.scss';
+
+.fontPrimary {
+  font-family: 'Franklin Gothic Regular';
+  &Condensed {
+    font-family: 'Franklin Gothic Condensed';
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.justifyContentCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.justifyContentCenterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

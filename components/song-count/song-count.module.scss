@@ -1,0 +1,8 @@
+@import '@global';
+@import '@vars';
+
+@media screen and (max-width: $mobile) {
+  .songCountContainer {
+    font-size: 12px;
+  }
+}

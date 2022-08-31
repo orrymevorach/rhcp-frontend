@@ -1,6 +1,5 @@
 import React from 'react';
 import ColumnHeadings from '../column-headings/column-headings';
-// import { teams } from '../../json';
 import TeamRow from '@components/team-row/team-row';
 import columnStyles from '@styles/column.module.scss';
 import globalStyles from '@global';

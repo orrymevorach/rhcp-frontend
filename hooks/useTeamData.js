@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-
-import draftBoard from 'json/draftBoard.json';
-import useSongData, { getSongData } from 'hooks/useSongData';
-// import count from '../../../api/json/songCount.json';
+import useDraftBoard from 'hooks/useDraftBoard';
+import useSongData from 'hooks/useSongData';
 
 const points = {
   1: 2,
@@ -79,8 +77,9 @@ const sortTeamsByTotalPoints = teamsWithTotalPoints => {
 export default function useTeamData() {
   const [teamData, setTeamData] = useState([]);
   const songData = useSongData();
+  const draftBoard = useDraftBoard();
   useEffect(() => {
-    if (songData) {
+    if (songData && draftBoard) {
       const draftBoardWithSongPointTotals = addPointValuesToEachSong(
         draftBoard,
         songData
@@ -93,9 +92,9 @@ export default function useTeamData() {
       const teamsSortedByLeaders = sortTeamsByTotalPoints(
         teamsAsArrayWithTotalPoints
       );
-      setTeamData(teamsAsArrayWithTotalPoints);
+      setTeamData(teamsSortedByLeaders);
     }
-  }, [songData]);
+  }, [songData, draftBoard]);
   return teamData;
 }
 

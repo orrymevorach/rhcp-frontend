@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 
 export default function useDraftBoard() {
-  const [data, setData] = useState([]);
+  const [draftBoard, setDraftBoard] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     fetch('https://rhcp-api.netlify.app/draftboard.json', {
       method: 'GET',
     })
       .then(res => res.json())
-      .then(json => setData(json));
+      .then(json => {
+        setIsLoading(false);
+        setDraftBoard(json);
+      });
   }, []);
-  return data;
+  return { draftBoard, isLoading };
 }

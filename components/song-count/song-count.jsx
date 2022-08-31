@@ -11,15 +11,16 @@ import {
   fontPrimaryCondensed,
   center,
   row,
-  left,
   fontPrimary,
   justifyContentCenter,
+  justifyContentCenterColumn,
 } from '@global';
 import clsx from 'clsx';
 import useSongData from 'hooks/useSongData';
+import Loader from '@components/loader/loader';
 
 export default function SongCount() {
-  const count = useSongData();
+  const { count, isLoading } = useSongData();
   return (
     <div className={clsx(pageColumn, songCountContainer)}>
       <h2 className={clsx(fontPrimaryCondensed, center)}>Song Count</h2>
@@ -35,9 +36,11 @@ export default function SongCount() {
           Last Played
         </p>
       </div>
-      <div className={justifyContentCenter}>
-        <div>
-          {count.map(([song, { count, formattedDate }]) => {
+      <div className={justifyContentCenterColumn}>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          count.map(([song, { count, formattedDate }]) => {
             return (
               <div className={row} key={song}>
                 <p
@@ -57,8 +60,8 @@ export default function SongCount() {
                 </p>
               </div>
             );
-          })}
-        </div>
+          })
+        )}
       </div>
     </div>
   );

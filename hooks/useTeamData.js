@@ -75,11 +75,12 @@ const sortTeamsByTotalPoints = teamsWithTotalPoints => {
 };
 
 export default function useTeamData() {
-  const [teamData, setTeamData] = useState([]);
-  const songData = useSongData();
-  const draftBoard = useDraftBoard();
+  const [teams, setTeamData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { count: songData, isLoading: isSongDataLoading } = useSongData();
+  const { draftBoard, isLoading: isDraftBoardLoading } = useDraftBoard();
   useEffect(() => {
-    if (songData && draftBoard) {
+    if (draftBoard.length > 0 && songData.length > 0) {
       const draftBoardWithSongPointTotals = addPointValuesToEachSong(
         draftBoard,
         songData
@@ -93,9 +94,17 @@ export default function useTeamData() {
         teamsAsArrayWithTotalPoints
       );
       setTeamData(teamsSortedByLeaders);
+      const isLoading = isSongDataLoading || isDraftBoardLoading || isLoading;
+      setIsLoading(isLoading);
     }
-  }, [songData, draftBoard]);
-  return teamData;
+  }, [
+    songData,
+    draftBoard,
+    isLoading,
+    isSongDataLoading,
+    isDraftBoardLoading,
+    setTeamData,
+    setIsLoading,
+  ]);
+  return { teams, isLoading };
 }
-
-// export { teamsSortedByLeaders as teams };

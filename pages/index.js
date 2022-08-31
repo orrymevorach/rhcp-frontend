@@ -16,7 +16,6 @@ export default function Home() {
           href="https://m.media-amazon.com/images/I/41VvATDmI3L._AC_SY450_.jpg"
         />
       </Head>
-      ;
       <main className={globalStyles.body}>
         <RhcpLogo />
         <div className={`${isDesktop && globalStyles.row}`}>

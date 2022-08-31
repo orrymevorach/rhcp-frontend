@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import draftBoard from '@json/draftBoard.json';
+import draftBoard from 'json/draftBoard.json';
 import useSongData, { getSongData } from 'hooks/useSongData';
 // import count from '../../../api/json/songCount.json';
 

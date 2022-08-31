@@ -10,8 +10,11 @@
     text-align: center;
   }
   &MediumLarge {
-    width: 100px;
+    width: 160px;
     text-align: center;
+    @media screen and (max-width: $mobile) {
+      width: 100px;
+    }
   }
   &Large {
     width: 200px;

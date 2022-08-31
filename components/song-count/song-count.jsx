@@ -31,7 +31,9 @@ export default function SongCount() {
           Song
         </p>
         <p className={clsx(columnMedium, borderRight)}>Play Count</p>
-        <p className={columnMedium}>Last Played</p>
+        <p style={{ textAlign: 'right' }} className={columnMedium}>
+          Last Played
+        </p>
       </div>
       <div className={justifyContentCenter}>
         <div>
@@ -47,7 +49,10 @@ export default function SongCount() {
                 <p className={clsx(fontPrimary, borderBottom, columnMedium)}>
                   {count}
                 </p>
-                <p className={clsx(fontPrimary, borderBottom, columnMedium)}>
+                <p
+                  style={{ textAlign: 'right' }}
+                  className={clsx(fontPrimary, borderBottom, columnMedium)}
+                >
                   {formattedDate}
                 </p>
               </div>

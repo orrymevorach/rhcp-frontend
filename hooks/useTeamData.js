@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import useDraftBoard from 'hooks/useDraftBoard';
 import useSongData from 'hooks/useSongData';
 
-const points = {
+export const points = {
   1: 2,
   2: 3,
   3: 4,

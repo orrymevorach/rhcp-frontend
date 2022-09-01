@@ -1,0 +1,65 @@
+@import '@vars';
+@import '@colors';
+
+.ruleButton {
+  background: none;
+  border: 2px solid $black;
+  cursor: pointer;
+  padding-top: 5px;
+  display: block;
+  margin: 50px auto 30px;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+.title {
+  font-size: 20px;
+  margin: 30px 0 20px;
+  text-decoration: underline;
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.emphasize {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.bulletPoint {
+  line-height: 1.3;
+}
+
+.descriptionColumn {
+  width: 600px;
+  &:first-of-type {
+    margin-right: 80px;
+  }
+  @media screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.points {
+  font-size: 20px;
+  width: 40px;
+}
+
+.round {
+  width: 280px;
+  margin-right: 20px;
+}
+
+.rulesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rowContainer {
+  display: flex;
+  @media screen and (max-width: $mobile) {
+    flex-direction: column;
+  }
+}

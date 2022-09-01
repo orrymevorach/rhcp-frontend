@@ -18,7 +18,7 @@ export default function Rules() {
         onClick={() => setShowRules(!showRules)}
         className={clsx(
           styles.ruleButton,
-          globalStyles.fontPrimary,
+          globalStyles.fontPrimaryCondensed,
           globalStyles.row
         )}
       >

@@ -5,7 +5,7 @@ export default function useDraftBoard() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://rhcp-api.netlify.app/draftboard.json', {
+    fetch('https://rhcp-api.netlify.app/json/draftboard.json', {
       method: 'GET',
     })
       .then(res => res.json())

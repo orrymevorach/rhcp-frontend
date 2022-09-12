@@ -40,7 +40,7 @@ export default function SongCount() {
         {isLoading ? (
           <Loader />
         ) : (
-          count.map(([song, { count, formattedDate }]) => {
+          count.map(({ song, count, formattedDate }) => {
             return (
               <div className={row} key={song}>
                 <p

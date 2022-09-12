@@ -21,7 +21,7 @@ export const points = {
 const addPointValuesToEachSong = (draftBoard, count = []) => {
   return draftBoard.map(songData => {
     let songCount = 0;
-    count.map(([song, { count }]) => {
+    count.map(({ song, count }) => {
       if (songData.song === song) {
         songCount = count;
       }

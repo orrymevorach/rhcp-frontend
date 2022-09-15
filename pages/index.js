@@ -5,6 +5,7 @@ import Rankings from '@components/rankings/rankings';
 import SongCount from '@components/song-count/song-count';
 import useWindowSize from 'hooks/useWindowSize';
 import Rules from 'components/rules/rules';
+import LastUpdated from '@components/last-updated/last-updated';
 
 export default function Home() {
   const { isDesktop } = useWindowSize();
@@ -20,6 +21,7 @@ export default function Home() {
       <main className={globalStyles.body}>
         <RhcpLogo />
         <Rules />
+        <LastUpdated />
         <div className={`${isDesktop && globalStyles.row}`}>
           <Rankings />
           <SongCount />
